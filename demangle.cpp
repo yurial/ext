@@ -8,7 +8,7 @@ namespace ext {
 std::string demangle(const std::string& name)
     {
     int status = -4;
-    std::unique_ptr<char,decltype(free)*> result_buf( abi::__cxa_demangle( name.c_str(), NULL, NULL, &status ), free );
+    std::unique_ptr<char,decltype(free)*> result_buf( abi::__cxa_demangle( name.c_str(), nullptr, nullptr, &status ), free );
     switch ( status )
         {
         case 0:
